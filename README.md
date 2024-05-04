@@ -40,3 +40,14 @@ npx expo prebuild -p ios
 ```bash
 npx expo run:ios
 ```
+
+## Error handling
+
+```
+ name:Any iOS Device, error:iOS 17.4 is not installed.
+```
+
+If you get this error, you need to install the iOS 17.4 simulator.
+make sure you have extra disk space 7.5GB on your machine.
+
+open xcode -> Settings -> Platforms -> iOS 17.4 -> Install

@@ -43,7 +43,8 @@ export const useVoiceRecognition = () => {
   const startRecognizing = useCallback(async () => {
     resetState();
     try {
-      await Voice.start("en-US");
+      // if you want to use English, you can use this 'en-US' locale
+      await Voice.start("ja-JP");
     } catch (e) {
       console.error(e);
     }
@@ -77,19 +78,19 @@ export const useVoiceRecognition = () => {
     Voice.onSpeechStart = (e) => {
       setState((prevState) => ({
         ...prevState,
-        started: "√",
+        started: "✅",
         isRecording: true,
       }));
     }
 
     Voice.onSpeechRecognized = (e) => {
-      setState((prev) => ({ ...prev, recognized: "√" }));
+      setState((prev) => ({ ...prev, recognized: "✅" }));
     }
 
     Voice.onSpeechEnd = (e) => {
       setState((prev) => ({
         ...prev,
-        end: "√",
+        end: "✅",
         isRecording: false,
       }));
     }
